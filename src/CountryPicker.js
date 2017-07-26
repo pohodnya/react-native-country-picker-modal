@@ -83,7 +83,8 @@ export default class CountryPicker extends Component {
   }
 
   static renderImageFlag(cca2, imageStyle) {
-    return cca2 !== '' ? <Image
+    let code = cca2 !== '' ? cca2.toUpperCase() : null;
+    return code ? <Image
       style={[styles.imgStyle, imageStyle]}
       source={{ uri: countries[cca2].flag }}
     /> : null;
